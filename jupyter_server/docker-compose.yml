@@ -1,0 +1,17 @@
+version: "3"
+services:
+  jupyterserver:
+    build: ./
+    container_name: jupyter-server
+    volumes:
+      - ./jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+      - ./app:/app
+    command: bash -c "/opt/Anaconda3/bin/jupyter notebook /app"
+    networks:
+      - jupyter
+    ports:
+      - "8888:8888"
+
+networks:
+  jupyter:
+    driver: bridge
