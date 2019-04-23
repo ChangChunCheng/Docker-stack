@@ -27,7 +27,7 @@ Note:
     There are some setting for envirment in the config file.
     Fix the set you want.
 
-2. Using docker-compose to turn on the jupyter-notebook server.
+3. Using docker-compose to turn on the jupyter-notebook server.
 Running the command in this diretory.
 Note:
     -d : turn on in backened.
