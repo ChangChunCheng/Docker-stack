@@ -1,11 +1,12 @@
 # Building jupyter-notebook server using docker-compose.
 
-1. Building the anaconda3 image.
+## Building the anaconda3 image.
+
 ```bash
 $ $(pwd)/build_anaconda_image.sh
 ```
 
-2. Fix the password in ./jupyter/jupyter_notebook_config.py.
+## Fix the password in ./jupyter/jupyter_notebook_config.py.
 
 Setting the jupyter-server password in jupyter-notebook.
 
@@ -31,7 +32,7 @@ Note:
   
   Fix the set you want.
 
-3. Using docker-compose to turn on the jupyter-notebook server.
+## Using docker-compose to turn on the jupyter-notebook server.
 
 Running the command in this diretory.
 
