@@ -16,6 +16,13 @@ $ $(pwd)/install_Anaconda.sh
 ```
 ## If you want to use docker with '--runtime=nvidia', please run the command with 'sudo'.
 ```bash
-$ cp $(pwd)/docker/etc/daemon.json /etc/docker/
+$ apt-get install nvidia-docker
+```
+Add "default-runtime" : "nvidia" to /etc/docker/daemon.json at first level.
+
+Look example in docker/etc/daemon.json.
+
+Restart docker.
+``` bash
 $ service docker restart
 ```
