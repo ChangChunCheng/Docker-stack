@@ -1,0 +1,21 @@
+version: "3"
+services:
+  jupyterserver:
+    build: ./
+    container_name: nvidia-tensorflow-jupyter-server
+#    runtime: nvidia
+#    environment:
+#      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+      - ../../:/app
+    command: bash -c "/opt/Anaconda3/bin/jupyter notebook /app"
+    networks:
+      - jupyter
+    ports:
+      - "8888:8888"
+      - "6006:6006"
+
+networks:
+  jupyter:
+    driver: bridge
