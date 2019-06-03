@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sudo apt-get install curl
+sudo apt-get install -y curl
 
 sudo curl "https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh" > ./Anaconda3-2019.03-Linux-x86_64.sh
 
