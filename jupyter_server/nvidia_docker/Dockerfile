@@ -1,22 +1,17 @@
-# Image base on nvidia_cuda10.1
-FROM nvidia/cuda:10.1-runtime-ubuntu18.04
+FROM nvidia/cuda:10.0-runtime-ubuntu18.04
 
 MAINTAINER jacky850509@gmail.com
 
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
-            libcudnn7=7.6.0.64-1+cuda10.1
-
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
+RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates apt-utils \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git mercurial subversion \
     curl vim ssh && \
     rm -rf /var/lib/apt/lists/*
 
 # Install curl, Anaconda3
-RUN apt-get install -y curl \
-    && curl "https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh" > /Anaconda3-2019.03-Linux-x86_64.sh \
+RUN curl "https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh" > /Anaconda3-2019.03-Linux-x86_64.sh \
     && chmod +x /Anaconda3-2019.03-Linux-x86_64.sh \
     && /Anaconda3-2019.03-Linux-x86_64.sh -b -p /opt/Anaconda3 \
     && rm /Anaconda3-2019.03-Linux-x86_64.sh \
@@ -26,7 +21,8 @@ RUN apt-get install -y curl \
 ENV PATH=/opt/Anaconda3/bin:$PATH python=/opt/Anaconda3/bin/python
 
 # Install tensorflow-gpu, jupyterlab, ... etc. packages.
-RUN python -m pip install tensorflow-gpu keras jupyterlab pyecharts pyecharts_snapshot
+RUN python -m pip install jupyterlab pyecharts pyecharts_snapshot \
+    && conda install -y tensorflow-gpu keras
 
 # Install R kernel and Julia kernel in conda.
 RUN conda install -y -c r r-irkernel \
