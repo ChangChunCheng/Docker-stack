@@ -1,10 +1,10 @@
-# Image base on nvidia_cuda9
-FROM nvidia/cuda:9.0-runtime-ubuntu16.04
+# Image base on nvidia_cuda10.1
+FROM nvidia/cuda:10.1-runtime-ubuntu18.04
 
 MAINTAINER jacky850509@gmail.com
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
-            libcudnn7=7.1.2.21-1+cuda9.0
+            libcudnn7=7.6.0.64-1+cuda10.1
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
