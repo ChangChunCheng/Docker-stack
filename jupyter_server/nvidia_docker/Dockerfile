@@ -24,13 +24,6 @@ ENV PATH=/opt/Anaconda3/bin:$PATH python=/opt/Anaconda3/bin/python
 RUN python -m pip install jupyterlab pyecharts pyecharts_snapshot \
     && conda install -y tensorflow-gpu keras
 
-# Install R kernel and Julia kernel in conda.
-RUN conda install -y -c r r-irkernel \
-    && conda install -y -c conda-forge julia
-
-# Julia install jupyter-notebook.
-RUN julia -e 'using Pkg; Pkg.add("IJulia"); using IJulia;'
-
 # Generate jupyter-config
 RUN /opt/Anaconda3/bin/jupyter-notebook --generate-config
 
