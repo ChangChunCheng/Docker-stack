@@ -18,13 +18,6 @@ Docker Compose for 3 Node Elasticsearch () Cluster and Kibana () Instance for de
 
 - [x] 3 Node Elasticsearch version 
 - [x] Kibana version 
-- [x] Audit Beat version 
-- [x] Metric Beat version 
-- [x] Heart Beat version 
-- [x] Packet Beat version 
-- [x] File Beat version 
-- [x] APM Server version 
-- [x] APM Search 
 - [x] NGINX
 
 # **NOTES**
@@ -35,7 +28,7 @@ Docker Compose for 3 Node Elasticsearch () Cluster and Kibana () Instance for de
 - [x] Docker 19.03.21
 - [x] Docker-compose 1.25.3, build d4d1b42b
 
-### **Start Stack in Daemon Mode**
+### **Start Stack**
 ```
 docker-compose up -d
 ```
