@@ -2,6 +2,17 @@
 
 **If you want to deploy elasticsearch, kibana in "swarm mode", please go to [maxyermayank/docker-compose-elasticsearch-kibana](https://github.com/maxyermayank/docker-compose-elasticsearch-kibana)**
 
+
+**更改系統虛擬機器記憶體大小**
+
+**Notice**
+
+每次重新該機會重設，可加入“/etc/sysctl.conf”中。
+
+```bash
+sudo sysctl -w vm.max_map_count=26144
+```
+
 # **Overview**
 Docker Compose for 3 Node Elasticsearch () Cluster and Kibana () Instance for development purposes.
 
