@@ -7,7 +7,7 @@
 
 **Notice**
 
-每次重新該機會重設，可加入“/etc/sysctl.conf”中。
+每次重新開機會重設，可加入“/etc/sysctl.conf”中。
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
